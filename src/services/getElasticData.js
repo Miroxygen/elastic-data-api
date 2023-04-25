@@ -18,6 +18,7 @@ export class GetElasticData {
     const response = await this.client.search({
       index: index,
       body: {
+        size : 10000,
         _source : [source],
               query : {
                 match_all : {}
@@ -38,7 +39,7 @@ export class GetElasticData {
     const response = await this.client.search({
       index: index,
       body: {
-        size: 20,
+        size: 10000,
         aggs: {
           language_type: {
             terms: {
