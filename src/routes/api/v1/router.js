@@ -3,8 +3,8 @@ import { router as resourceRouter } from './resource-router.js'
 
 export const router = express.Router()
 
-router.get('/', () => {
-  res.json({ message : "Welcome to this simple API for fetching data from my Elastic Cloud. /resources for more."})
+router.get('/', (req, res) => {
+  res.json({ message : "Welcome to this simple API for fetching data from my Elastic Cloud. /resource for more."})
 })
 
-router.use('/', resourceRouter)
+router.use('/resource', resourceRouter)
